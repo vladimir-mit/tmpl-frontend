@@ -1,0 +1,29 @@
+{
+  "name": "tmpl_front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladimir-mit/tmpl-frontend.git"
+  },
+  "author": "Vladimir-Mitlashevskii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladimir-mit/tmpl-frontend/issues"
+  },
+  "homepage": "https://github.com/vladimir-mit/tmpl-frontend#readme",
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1"
+  }
+}
