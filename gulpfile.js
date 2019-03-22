@@ -28,7 +28,7 @@ gulp.task('sass', function() {
             browsers: ['last 3 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest(dist_cssDir))
+        .pipe(gulp.dest(app_cssDir))
         .pipe(browserSync.stream());
 });
 
@@ -41,7 +41,7 @@ gulp.task('copyFonts', function () {
 // Copy the Bootstrap javascript files
 gulp.task('copyJs', function() {
     return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js'])
-        .pipe(gulp.dest(dist_jsDir))
+        .pipe(gulp.dest(app_jsDir))
         .pipe(browserSync.stream());
 });
 
@@ -56,13 +56,13 @@ gulp.task('copyBalloon', function() {
 gulp.task('server', function() {
 	browserSync.init({
 		server: {
-			baseDir: 'dist'
+			baseDir: 'app'
 		}
 	});
-	gulp.watch(app_scssDir + '**/*.scss', ['sass']);
-	gulp.watch("dist/css/*.css").on('change', browserSync.reload);
-	gulp.watch("dist/js/*.js").on('change', browserSync.reload);
-	gulp.watch("dist/*.html").on('change', browserSync.reload);
+	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass'));
+	gulp.watch("app/css/*.css").on('change', browserSync.reload);
+	gulp.watch("app/js/*.js").on('change', browserSync.reload);
+	gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 
 //объединение файлов CSS
