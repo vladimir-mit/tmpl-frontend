@@ -9,7 +9,9 @@ var gulp = require('gulp'),
 
 var browserSync = require('browser-sync').create();
 
-var app_cssDir = 'app/css/',
+var appDir = 'app/',
+	distDir = 'dist/',
+	app_cssDir = 'app/css/',
 	app_scssDir = 'app/scss/',
 	app_jsDir = 'app/js/',
 	dist_cssDir = 'dist/css/',
@@ -32,21 +34,24 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
-//копируем все шрифты
-gulp.task('copyFonts', function () {
-	return gulp.src('app/fonts/**/*')
-		.pipe(gulp.dest('dist/fonts/'));
-});
-
-// Copy the Bootstrap javascript files
+//копируем все JS
+//Bootstrap / Jquery / Fancybox / BxSlider
 gulp.task('copyJs', function() {
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js'])
+    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js', 'node_modules/bxslider/dist/jquery.bxslider.min.js'])
         .pipe(gulp.dest(app_jsDir))
         .pipe(browserSync.stream());
 });
 
+// копируем все CSS
+//Fancybox / BxSlider
+gulp.task('copyCss', function() {
+    return gulp.src(['node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css', 'node_modules/bxslider/dist/jquery.bxslider.min.css'])
+        .pipe(gulp.dest(app_cssDir))
+        .pipe(browserSync.stream());
+});
+
 // Copy Balloon-scss
-gulp.task('copyBalloon', function() {
+gulp.task('copyBalloonScss', function() {
     return gulp.src(['node_modules/balloon-css/src/balloon.scss'])
         .pipe(gulp.dest(app_scssDir))
         .pipe(browserSync.stream());
@@ -60,9 +65,22 @@ gulp.task('server', function() {
 		}
 	});
 	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass'));
-	gulp.watch("app/css/*.css").on('change', browserSync.reload);
-	gulp.watch("app/js/*.js").on('change', browserSync.reload);
-	gulp.watch("app/*.html").on('change', browserSync.reload);
+	gulp.watch(appDir + 'css/*.css').on('change', browserSync.reload);
+	gulp.watch(appDir + 'js/*.js').on('change', browserSync.reload);
+	gulp.watch(appDir + '*.html').on('change', browserSync.reload);
+});
+
+
+// gulp.task('toDist', function () {
+// 	gulp.run('copyFonts');
+// 	gulp.run('copyFonts');
+// 	gulp.run('copyFonts');
+// });
+
+//копируем все шрифты в Dist
+gulp.task('copyFonts', function () {
+	return gulp.src(appDir + 'fonts/**/*')
+		.pipe(gulp.dest(distDir + 'fonts/'));
 });
 
 //объединение файлов CSS
