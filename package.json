@@ -30,6 +30,7 @@
     "balloon-css": "^0.5.0",
     "bootstrap": "^4.3.1",
     "bxslider": "^4.2.14",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.1"
   }
 }

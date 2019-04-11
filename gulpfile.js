@@ -11,11 +11,11 @@ var browserSync = require('browser-sync').create();
 
 var appDir = 'app/',
 	distDir = 'dist/',
-	app_cssDir = 'app/css/',
-	app_scssDir = 'app/scss/',
-	app_jsDir = 'app/js/',
-	dist_cssDir = 'dist/css/',
-	dist_jsDir = 'dist/js/';
+	app_cssDir = appDir + 'css/',
+	app_scssDir = appDir + 'scss/',
+	app_jsDir = appDir + 'js/',
+	dist_cssDir = distDir + 'css/',
+	dist_jsDir = distDir + 'js/';
 
 //default task
 gulp.task('default', function () {
@@ -35,9 +35,16 @@ gulp.task('sass', function() {
 });
 
 //копируем все JS
-//Bootstrap / Jquery / Fancybox / BxSlider
+//Jquery / Fancybox / BxSlider
 gulp.task('copyJs', function() {
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js', 'node_modules/bxslider/dist/jquery.bxslider.min.js'])
+    return gulp.src(['node_modules/jquery/dist/jquery.min.js', 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js', 'node_modules/bxslider/dist/jquery.bxslider.min.js'])
+        .pipe(gulp.dest(app_jsDir))
+        .pipe(browserSync.stream());
+});
+
+//BootstrapJs
+gulp.task('copyBootstrapJs', function() {
+    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js'])
         .pipe(gulp.dest(app_jsDir))
         .pipe(browserSync.stream());
 });
@@ -50,7 +57,15 @@ gulp.task('copyCss', function() {
         .pipe(browserSync.stream());
 });
 
-// Copy Balloon-scss
+//normalize.css
+gulp.task('normalize', function() {
+	return gulp.src(['node_modules/normalize.css/normalize.css'])
+		.pipe(cssnano())
+        .pipe(gulp.dest(app_cssDir))
+        .pipe(browserSync.stream());
+});
+
+// Copy Balloon-scss (всплывающие подсказки)
 gulp.task('copyBalloonScss', function() {
     return gulp.src(['node_modules/balloon-css/src/balloon.scss'])
         .pipe(gulp.dest(app_scssDir))
