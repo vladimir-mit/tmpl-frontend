@@ -22,7 +22,8 @@ gulp.task('default', function () {
 	gulp.run('sass');
 });
 
-// Compile sass into CSS & auto-inject into browsers. and CSS autoprefixer //.pipe(cssnano())//minify
+// Compile sass into CSS & auto-inject into browsers. and CSS autoprefixer 
+// minify - .pipe(cssnano())
 gulp.task('sass', function() {
     return gulp.src([app_scssDir + 'styles.scss'])
         .pipe(sass())
@@ -57,7 +58,7 @@ gulp.task('copyCss', function() {
         .pipe(browserSync.stream());
 });
 
-//normalize.css
+//normalize.css (если не использовать Bootstrap)
 gulp.task('normalize', function() {
 	return gulp.src(['node_modules/normalize.css/normalize.css'])
 		.pipe(cssnano())
@@ -85,13 +86,6 @@ gulp.task('server', function() {
 	gulp.watch(appDir + '*.html').on('change', browserSync.reload);
 });
 
-
-// gulp.task('toDist', function () {
-// 	gulp.run('copyFonts');
-// 	gulp.run('copyFonts');
-// 	gulp.run('copyFonts');
-// });
-
 //копируем все шрифты в Dist
 gulp.task('copyFonts', function () {
 	return gulp.src(appDir + 'fonts/**/*')
@@ -102,5 +96,11 @@ gulp.task('copyFonts', function () {
 // gulp.task('allcss', function() {
 // 	return gulp.src([app_cssDir + 'custom.css'])
 // 		.pipe(concat('styles.css'))
-// 		.pipe(gulp.dest(app_cssDir));
+//		.pipe(cssnano())
+// 		.pipe(gulp.dest(dist_cssDir));
+// });
+
+// gulp.task('toDist', function () {
+// 	gulp.run('copyFonts');
+// 	gulp.run('allcss');
 // });
