@@ -83,8 +83,8 @@ gulp.task('copyBalloonScss', function() {
 //default task
 gulp.task('default', gulp.series('server'));
 
-/* Задачи для Dist */
 
+/* Задачи для Dist */
 //объединение файлов CSS
 gulp.task('concatCss', function() {
 	return gulp.src([app_cssDir + '*.css'])
