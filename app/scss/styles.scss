@@ -1,20 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
 
+/* text colors */
+$body-color: #4E4D53;
+$important-color: #ff0000;
+$link-color: #F47821;
+$highlight-color: #F47821;
+$black-color: #000;
+$white-color: #fff;
+
+/* bg colors */
+$body-bg: #fff;
+$second-bg: #F7F5FA;
+$dark-bg: #161616;
+
+/* links */
+$a-decoration: none;
+$a-decoration-hover: underline;
+
+/* H1... */
+$h-font-style: 'Roboto', sans-serif;
+$h-font-weight: 700;
+$h-font-color: #222;
+
+/* forms */
+$input_border: #d4d4d4 solid 1px;
+$textarea_resize: none;
+
 body {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 26px;
-    color: #4E4D53;
+    background: $body-bg;
+    color: $body-color;
 }
 html,body{height: 100%;min-height: 100%;}
 
 p {margin: 0 0 20px;}
-p.error {margin: 0 0 5px;color:#ff0000;}
+p.error {margin: 0 0 5px;color:$important-color;}
 
-a {text-decoration: none;transition: all 0.3s ease 0s;color: #F47821;}
-a:hover {text-decoration: underline;}
+a {text-decoration: $a-decoration;transition: all 0.3s ease 0s;color: $link-color;}
+a:hover {text-decoration: $a-decoration-hover;}
 a img {border: 0;outline: none;}
 a:hover img {opacity: 0.85;transition: all 0.3s ease 0s;outline: none;}
 
@@ -22,9 +49,9 @@ b, strong {font-weight: 700;}
 
 .h1, .h2, .h3, .h4, .h5 {display: block;}
 h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
-	font-weight: 700;
-	color: #222222;
-	font-family: 'Roboto', sans-serif;
+	font-weight: $h-font-weight;
+	color: $h-font-color;
+	font-family: $h-font-style;
 }
 h1,.h1 {
     font-size: 48px;
@@ -60,7 +87,7 @@ h6,.h6 {
 table {width: 100%;border-collapse: collapse;}
 table td {vertical-align: top;}
 
-._required {color: #FF0000;}
+._required {color: $important-color;}
 .mb_0 {margin-bottom: 0px;}
 .mt_0 {margin-top: 0px;}
 .padding_0 {padding: 0px;}
@@ -77,25 +104,26 @@ table td {vertical-align: top;}
 ._hidden {display: none;}
 
 button[type=submit]:hover,
-input[type=submit]:hover {cursor: pointer;}
+input[type=submit]:hover,
+select {
+    cursor: pointer;
+}
 
-.wrapper {max-width: 1300px;margin: auto;width: 100%;box-sizing: border-box;}
-
-select {cursor: pointer;}
-label {text-transform: uppercase;font-weight: 700;display: block;}
+label {display: block;}
 form textarea,
 form input {
    display: inline-block;
    vertical-align: top;
    padding: 12px 18px;
    margin-bottom: 25px;
-   border: #d4d4d4 solid 1px;
-   font-size: 14px;line-height: 14px;
+   border: $input_border;
+   font-size: 14px;
+   line-height: 14px;
    box-sizing: border-box;
    width: 100%;
 }
 form textarea {
-   resize: none;
+   resize: $textarea_resize;
 }
 form input[type=radio],
 form input[type=checkbox] {
@@ -103,3 +131,15 @@ form input[type=checkbox] {
    margin-bottom: 0px;
    vertical-align: middle;
 }
+/* end default */
+
+.wrapper {
+    display: block;
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.highlight {color: $highlight-color;}
