@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/vladimir-mit/tmpl-frontend#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
-    "balloon-css": "^0.5.0",
+    "balloon-css": "^0.5.2",
     "bootstrap": "^4.3.1",
     "bxslider": "^4.2.14",
     "jquery": "^3.4.1",
