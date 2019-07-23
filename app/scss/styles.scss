@@ -1,21 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
 
 /* text colors */
-$body-color: #4E4D53;
+$body-color: #3f3f3f;
+$second-color: #2699fb;
+$gray-color: #dbdbdb;
 $important-color: #ff0000;
-$link-color: #F47821;
-$highlight-color: #F47821;
+$link-color: #2699fb;
+$highlight-color: #ffa200;
 $black-color: #000;
 $white-color: #fff;
+$decrp-color: #525252;
+$placeholder-color: #dbdbdb;
+$footer-color: #959595;
 
 /* bg colors */
-$body-bg: #fff;
-$second-bg: #F7F5FA;
-$dark-bg: #161616;
+$body-bg: #f6f6f6;
+$second-bg: #dbdbdb;
+$dark-bg: #707070;
+$footer-bg: #626262;
 
 /* links */
 $a-decoration: none;
-$a-decoration-hover: underline;
+$a-decoration-hover: none;
 
 /* H1... */
 $h-font-style: 'Roboto', sans-serif;
@@ -23,27 +29,35 @@ $h-font-weight: 700;
 $h-font-color: #222;
 
 /* forms */
-$input_border: #d4d4d4 solid 1px;
+$input_border: #dbdbdb solid 2px;
+$input_bg: transparent;
 $textarea_resize: none;
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 26px;
-    background: $body-bg;
-    color: $body-color;
-}
-html,body{height: 100%;min-height: 100%;}
+/* other */
+$p-margin: 0 0 27px;
+$body-padding-left: 26px;
+$body-padding-right: 26px;
 
-p {margin: 0 0 20px;}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  background: $body-bg;
+  color: $body-color;
+}
+html,body{height: 100%;min-height: 100%;min-width: 320px;}
+
+* {transition: all 0.3s ease 0s;}
+
+p {margin: $p-margin;}
 p.error {margin: 0 0 5px;color:$important-color;}
 
-a {text-decoration: $a-decoration;transition: all 0.3s ease 0s;color: $link-color;}
+a {text-decoration: $a-decoration;color: $link-color;}
 a:hover {text-decoration: $a-decoration-hover;}
 a img {border: 0;outline: none;}
-a:hover img {opacity: 0.85;transition: all 0.3s ease 0s;outline: none;}
+a:hover img {opacity: 0.85;outline: none;}
 
 b, strong {font-weight: 700;}
 
@@ -54,92 +68,159 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
 	font-family: $h-font-style;
 }
 h1,.h1 {
-    font-size: 48px;
-    line-height: 60px;
-	margin: 30px 0px;
+  font-size: 30px;
+  line-height: 32px;
+	margin: 20px 0px;
 }
 h2,.h2 {
-	font-size: 36px;
-	line-height: 36px;
-	margin: 25px 0px;
+	font-size: 28px;
+	line-height: 30px;
+	margin: 20px 0px;
 }
 h3,.h3 {
 	font-size: 26px;
-	line-height: 26px;
+	line-height: 28px;
 	margin: 20px 0px;
 }
 h4,.h4 {
-	font-size: 21px;
-	line-height: 26px;
-	margin: 15px 0px;
+	font-size: 20px;
+	line-height: 22px;
+	margin: 20px 0px;
 }
 h5,.h5 {
-	font-size: 19px;
-	line-height: 26px;
-	margin: 15px 0px;
+	font-size: 18px;
+	line-height: 20px;
+	margin: 20px 0px;
 }
 h6,.h6 {
 	font-size: 16px;
-	line-height: 26px;
-	margin: 15px 0px;
+	line-height: 18px;
+	margin: 20px 0px;
 }
 
 table {width: 100%;border-collapse: collapse;}
 table td {vertical-align: top;}
 
-._required {color: $important-color;}
-.mb_0 {margin-bottom: 0px;}
-.mt_0 {margin-top: 0px;}
-.padding_0 {padding: 0px;}
-.clear {display: block;clear: both;}
-.clearfix::after {content: "";display: table;clear: both;}
-.text_center {text-align: center;}
-.text_right {text-align: right;}
-.text_left {text-align: left;}
-._uppertext {text-transform: uppercase;}
-
-._inline_block {display: inline-block;vertical-align: top;}
-._flex_between {display: flex;flex-wrap: wrap;justify-content: space-between;}
-._flex_start {display: flex;flex-wrap: wrap;justify-content:flex-start;}
-._hidden {display: none;}
-
-button[type=submit]:hover,
-input[type=submit]:hover,
-select {
-    cursor: pointer;
+button[type=submit],
+input[type=submit],
+select,
+label[for] {
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  background-color: $gray-color;
+  border-color: $gray-color;
 }
 
-label {display: block;}
-form textarea,
-form input {
-   display: inline-block;
-   vertical-align: top;
-   padding: 12px 18px;
-   margin-bottom: 25px;
-   border: $input_border;
-   font-size: 14px;
-   line-height: 14px;
-   box-sizing: border-box;
-   width: 100%;
+button:focus,
+textarea:focus,
+input:focus {outline: none;}
+
+label {
+  display: block;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 25px;
+  color: $white-color;
+  margin-bottom: 17px;
 }
-form textarea {
-   resize: $textarea_resize;
+textarea,
+input {
+  display: inline-block;
+  vertical-align: top;
+
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 22px;
+  color: $link-color;
+
+  padding: 15px;
+  margin-bottom: 17px;
+  
+  width: 100%;
+  box-sizing: border-box;
+  border: $input_border;
+  background: $input_bg;
+
+  caret-color: $link-color;
+  text-align: center;
+  border-radius: 6px;
 }
-form input[type=radio],
-form input[type=checkbox] {
-   width: auto;
-   margin-bottom: 0px;
-   vertical-align: middle;
+textarea {
+  text-align: left;
+  resize: $textarea_resize;
+}
+input[type=radio],
+input[type=checkbox] {
+  width: auto;
+  margin-bottom: 0px;
+  vertical-align: middle;
+}
+
+input[type=submit] {
+    width: 100%;
+    background: $white-color;
+    color: $highlight-color;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 111px;
+    padding: 20px 0 16px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+input[type=submit]:hover {
+    background: $highlight-color;
+    color: $black-color;
+}
+
+/* изменение цвета placeholder */
+input::-webkit-input-placeholder {color: $placeholder-color}
+
+/* Удаление желтого фона при автозаполнении полей (как правило, форм с логином и паролем) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 10em $white-color inset !important;
+  -webkit-text-fill-color: $link-color !important;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:    0px 5px 40px 0px rgba(0, 0, 0, 0.1);
+  box-shadow:         0px 5px 40px 0px rgba(0, 0, 0, 0.1);
 }
 /* end default */
 
 .wrapper {
-    display: block;
-    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    margin: auto;
+    height: 100%;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
 
-.highlight {color: $highlight-color;}
+.content {
+    flex: 1 0 auto;
+    padding: 52px $body-padding-left 30px;
+}
+.footer-wrapper,
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 1366px;
+}
+
+@import "header.scss";
+
+@import "menu.scss";
+
+@import "footer.scss";
+
+@import "common.scss";
+
+@import "media.scss";

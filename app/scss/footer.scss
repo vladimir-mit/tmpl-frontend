@@ -1,0 +1,10 @@
+/* footer */
+footer {
+    flex: 0 0 auto;
+    display: block;
+    background: $footer-bg;
+    color: $footer-color;
+    text-align: center;
+    padding: 32px $body-padding-left;
+  }
+  footer p {margin-bottom: 0px;}
