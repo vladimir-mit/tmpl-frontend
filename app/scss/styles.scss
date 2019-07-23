@@ -184,8 +184,10 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0px 10em $white-color inset !important;
-  -webkit-text-fill-color: $link-color !important;
+    -webkit-box-shadow: 0 0 0px 10em $white-color inset !important;
+    -moz-box-shadow:    0 0 0px 10em $white-color inset !important;
+    box-shadow:         0 0 0px 10em $white-color inset !important;
+    -webkit-text-fill-color: $link-color !important;
 }
 
 .box-shadow {
