@@ -8,12 +8,14 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	watch = require('gulp-watch'),
 	sourcemaps = require('gulp-sourcemaps'),
-	clean = require('gulp-clean');
+	clean = require('gulp-clean'),
+	rigger = require('gulp-rigger');
 
 var browserSync = require('browser-sync').create();
 
 var appDir = 'app/',
 	distDir = 'dist/',
+	app_tmplDir = appDir + 'tmpl/',
 	app_cssDir = appDir + 'css/',
 	app_scssDir = appDir + 'scss/',
 	app_jsDir = appDir + 'js/',
@@ -29,8 +31,8 @@ gulp.task('server', function() {
 		}
 	});
 	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'delComplCssFile', 'concatCss'));
+	gulp.watch(app_tmplDir + '**/*.html', gulp.series('htmlBuild'));
 	gulp.watch(app_jsDir + '*.js').on('change', browserSync.reload);
-	gulp.watch(appDir + '*.html').on('change', browserSync.reload);
 });
 
 //Compile sass into CSS & auto-inject into browsers, and CSS autoprefixer
@@ -84,6 +86,7 @@ gulp.task('copyBalloonScss', function() {
 
 //объединение файлов CSS
 gulp.task('concatCss', function() {
+	//return gulp.src([app_cssDir + 'normalize.css', app_cssDir + 'jquery.fancybox.min.css', app_cssDir + 'jquery.bxslider.min.css', app_cssDir + 'styles.css'])
 	return gulp.src([app_cssDir + '*.css'])
 		.pipe(sourcemaps.init())
 			.pipe(concat('all.css'))
@@ -94,6 +97,7 @@ gulp.task('concatCss', function() {
 
 //объединение файлов Js
 gulp.task('concatJs', function() {
+	//return gulp.src([app_jsDir + 'jquery.min.js', app_jsDir + 'jquery.fancybox.min.js', app_jsDir + 'jquery.bxslider.min.js', app_jsDir + 'scripts.js'])
 	return gulp.src([app_jsDir + '*.js'])
 		.pipe(sourcemaps.init())
 			.pipe(concat('all.js'))
@@ -112,6 +116,14 @@ gulp.task('delComplCssFile', function () {
 gulp.task('delComplJsFile', function () {
 	return gulp.src(app_jsDir + 'all.js', {allowEmpty: true})
 	  .pipe(clean());
+});
+
+//собираем html
+gulp.task('htmlBuild', function () {
+	return gulp.src(app_tmplDir + '*.html')
+	  .pipe(rigger())
+	  .pipe(gulp.dest(appDir))
+	  .pipe(browserSync.stream());
 });
 
 //default task
