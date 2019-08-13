@@ -13,4 +13,5 @@
 - gulp-watch
 - gulp-sourcemaps
 - gulp-clean
+- gulp-rigger
 - browser-sync
