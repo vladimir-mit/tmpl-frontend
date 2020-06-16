@@ -217,12 +217,9 @@ input:-webkit-autofill:active {
     max-width: 1366px;
 }
 
-@import "header.scss";
-
-@import "menu.scss";
-
-@import "footer.scss";
-
-@import "common.scss";
+@import "include/header.scss";
+//@import "include/menu.scss";
+@import "include/footer.scss";
+@import "include/common.scss";
 
 @import "media.scss";
