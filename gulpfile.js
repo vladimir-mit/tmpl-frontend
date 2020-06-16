@@ -31,6 +31,7 @@ gulp.task('server', function() {
 		}
 	});
 	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'delComplCssFile', 'concatCss'));
+	//gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass'));
 	gulp.watch(app_tmplDir + '**/*.html', gulp.series('htmlBuild'));
 	gulp.watch(app_jsDir + '*.js').on('change', browserSync.reload);
 });
@@ -63,6 +64,18 @@ gulp.task('copyJQ', function() {
 gulp.task('copyBootstrapJs', function() {
     return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js'])
         .pipe(gulp.dest(app_jsDir));
+});
+
+//копируем Bootstrap CSS GRID
+gulp.task('copyBTGrid', function() {
+    return gulp.src(['node_modules/bootstrap/dist/css/bootstrap-grid.min.css'])
+        .pipe(gulp.dest(app_cssDir));
+});
+
+//копируем Bootstrap CSS reboot
+gulp.task('copyBTReboot', function() {
+    return gulp.src(['node_modules/bootstrap/dist/css/bootstrap-reboot.min.css'])
+        .pipe(gulp.dest(app_cssDir));
 });
 
 //копируем CSS - Fancybox / BxSlider
