@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
 
+@import '../../node_modules/bootstrap/scss/bootstrap-reboot.scss';
+@import 'include/custom-bootstrap.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+.px-5 {padding-left: 42px!important;padding-right: 42px!important;}
+
 /* text colors */
 $body-color: #3f3f3f;
 $second-color: #2699fb;

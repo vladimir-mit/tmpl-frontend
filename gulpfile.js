@@ -30,8 +30,8 @@ gulp.task('server', function() {
 			baseDir: 'app'
 		}
 	});
-	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'delComplCssFile', 'concatCss'));
-	//gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass'));
+	//gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'delComplCssFile', 'concatCss'));
+	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass'));
 	gulp.watch(app_tmplDir + '**/*.html', gulp.series('htmlBuild'));
 	gulp.watch(app_jsDir + '*.js').on('change', browserSync.reload);
 });

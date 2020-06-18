@@ -2,10 +2,7 @@
 .dark-bg {background-color:$dark-bg;color:$white-color;}
 .dark-bg h1, .dark-bg h2, .dark-bg h3, .dark-bg h4, .dark-bg h5, .dark-bg .h1, .dark-bg .h2, .dark-bg .h3, .dark-bg .h4, .dark-bg .h5 {color:$white-color;}
 .second-bg {background-color:$second-bg;}
-.brown-bg {background-color:$brown-bg;color:$white-color;}
-.brown-bg a {color:$white-color;}
-.brown-bg a:hover {color:$black-color;}
-.border-gray {border:1px solid $gray-border;}
+.border-gray {border:1px solid $gray-color;}
 .highlight {color:$highlight-color;}
 ._required {color:$important-color;}
 .mb_0 {margin-bottom:0px;}
