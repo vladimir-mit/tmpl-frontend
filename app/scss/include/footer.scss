@@ -5,7 +5,6 @@ footer {
 	background: $footer-bg;
 	color: $footer-color;
 	text-align: center;
-	padding: 32px $body-padding-left;
+	padding: $default-spacing;
 }
-
 footer p {margin-bottom: 0px;}

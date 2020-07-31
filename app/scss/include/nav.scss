@@ -1,0 +1,25 @@
+/* menu */
+nav {
+	position: relative;
+
+	ul {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		list-style-type: none;
+		padding: $default-spacing 0;
+
+		li {
+			display: block;
+			margin-right: $default-spacing;
+
+			&:last-child {margin-right: 0;}
+
+			a {
+				color: $black-color;
+	
+				&:hover {color: $link-color}
+			}
+		}
+	}
+}

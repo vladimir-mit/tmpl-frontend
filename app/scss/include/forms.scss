@@ -1,0 +1,207 @@
+button[type=submit],
+input[type=submit],
+select,
+label[for] {
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  background-color: $gray-color;
+  color: $black-color;
+}
+
+button:focus,
+textarea:focus,
+input:focus,
+select:focus, {outline: none;}
+
+label {
+  display: block;
+  font-family: $h-font-style;
+  color: $forms-label-color;
+  margin-bottom: $default-spacing;
+}
+textarea,
+input,
+select {
+  display: inline-block;
+  vertical-align: top;
+  font-family: $h-font-style;
+  color: $black-color;
+  padding: $input-padding;
+  margin-bottom: $default-spacing;
+  width: 100%;
+  box-sizing: border-box;
+  border: $input-border;
+  background: $input-bg;
+  caret-color: $second-color;
+  border-radius: $input-border-radius;
+  text-align: left;
+  transition: all linear .3s;
+}
+textarea {
+  text-align: left;
+  resize: $textarea-resize;
+}
+input[type=radio],
+input[type=checkbox] {
+  width: auto;
+  margin-bottom: 0px;
+  vertical-align: middle;
+}
+
+input[type=submit] {
+    width: 100%;
+    background: $white-color;
+    color: $highlight-color;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 111px;
+    padding: 20px 0 16px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+input[type=submit]:hover {
+    background: $highlight-color;
+    color: $black-color;
+}
+
+button {
+  font-family: $h-font-style;
+  background: transparent;
+  border: $button-border;
+  border-radius: $input-border-radius;
+  font-weight: $font-weight-bold;
+  color: $white-color;
+  padding: $button-padding;
+  transition: all linear .3s;
+  width: 100%;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+button:hover {border-color:$white-color}
+button + button, .btn + .btn, button + .btn, .btn + button {margin-top: $default-spacing;}
+
+/* изменение цвета placeholder */
+input::-webkit-input-placeholder {color: $placeholder-color}
+
+/* Удаление желтого фона при автозаполнении полей (как правило, форм с логином и паролем) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 10em $link-color-hover inset !important;
+    -moz-box-shadow:    0 0 0px 10em $link-color-hover inset !important;
+    box-shadow:         0 0 0px 10em $link-color-hover inset !important;
+    -webkit-text-fill-color: $white-color !important;
+}
+
+.site-form_input {position: relative;}
+
+/* checkbox */
+.site-form_input--checkbox {
+    position: relative;
+
+    & input[type=checkbox] {display: none;}
+    & label {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        padding-left: 40px;
+        min-height: 24px;
+        line-height: 24px;
+    }
+    & label::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        border-radius: 2px;
+        color: $white-color;
+        text-align: center;
+        line-height: 24px;
+        font-size: 118%;
+        font-weight: $font-weight-bold;
+        border: $border-color solid 1px;
+    }
+    & label:hover::before {
+        border-color: $white-color;
+    }
+    & input[type=checkbox]:checked + label:before {
+        content: "\2713";
+        background-color: $green-color;
+        border-color: transparent;
+    }
+    & input[type=submit] {
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+}
+.site-form_input--checkbox--white-color {
+    & label {
+        color: $white-color;
+    }
+}
+/* /checkbox */
+
+/* radio */
+.site-form_radio {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 8px;
+}
+	.site-form_radio_item {
+		position: relative;
+		width: 50%;
+
+		& input[type=radio] {display: none;}
+		& label {
+			display: block;
+			position: relative;
+			padding: 9px 16px;
+			font-weight: $font-weight-bold;
+			letter-spacing: 0.02em;
+			text-transform: uppercase;
+			text-align: center;
+			border: 2px solid $border-color;
+			border-radius: $border-radius;
+			margin-bottom: 8px;
+			margin-right: 8px;
+		}
+		& input[type=radio]:checked + label {
+			color: $white-color;
+		}
+	}
+
+	.site-form_radio--two {
+		& label {
+			margin-right: 0px;
+		}
+		& .site-form_radio_item:first-child label {
+			border-right-width: 1px;
+			border-radius: $border-radius 0 0 $border-radius;
+		}
+		& .site-form_radio_item:last-child label {
+			border-left: none;
+			border-radius: 0 $border-radius $border-radius 0;
+		}
+	}
+/* /radio */
+
+.site-form-upload-wrap {
+  display: inline-block;
+  vertical-align: text-bottom;
+
+  & label,
+  & input,
+  & button {margin-bottom: 0;}
+}

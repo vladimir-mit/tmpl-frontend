@@ -1,18 +1,4 @@
 header {
-    background: $white-color;
-}
-.header-wrapper {
-    position: relative;
-    flex: 0 0 auto;
-    padding: 39px $body-padding-left;
-    z-index: 9;
-    max-width: 1366px;
-}
-
-.header-logo-text {
-    text-align: center;
-    font-size: 30px;
-    line-height: 32px;
-    text-transform: uppercase;
-    font-weight: 600;
+    background: $header-bg;
+    color: $header-color;
 }

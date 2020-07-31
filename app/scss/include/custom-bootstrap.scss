@@ -1,28 +1,20 @@
 //$grid-columns:      12;
-$grid-gutter-width: 52px;
+$grid-gutter-width: 32px;
 
 $grid-breakpoints: (
     xs: 0,
     sm: 576px,
     md: 768px,
     lg: 992px,
-    xl: 1024px
+    xl: 1024px,
+    xxl: 1150px
 );
 
 $container-max-widths: (
-    xs: 300px,
+    xs: 320px,
     sm: 540px,
     md: 720px,
     lg: 960px,
-    xl: 2620px
+    xl: 1264px,
+    xxl: 1264px
 );
-
-$box-shadow-sm: 0px 23px 30px 0px rgba(48, 52, 65, 0.3);
-$box-shadow:    0px 6px 30px 0px rgba(97, 108, 128, 0.4);
-$box-shadow-lg: 0px 10px 27px 0px rgba(6, 86, 249, 0.2);
-
-$border-radius:    .25rem !default;
-$border-radius-lg: .3rem !default;
-$border-radius-sm: .2rem !default;
-
-$rounded-pill: 50rem !default;
