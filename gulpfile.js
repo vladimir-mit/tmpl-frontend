@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	autoprefixer = require('gulp-autoprefixer'),
 	cssnano = require('gulp-cssnano'),
+	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify'),
 	sass = require('gulp-sass'),
 	watch = require('gulp-watch'),
@@ -31,7 +32,7 @@ gulp.task('server', function() {
 		}
 	});
 	//gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'delComplCssFile', 'concatCss'));
-	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass'));
+	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'css-min'));
 	gulp.watch(app_tmplDir + '**/*.html', gulp.series('htmlBuild'));
 	gulp.watch(app_jsDir + '*.js').on('change', browserSync.reload);
 });
@@ -46,6 +47,13 @@ gulp.task('sass', function() {
         }))
         .pipe(gulp.dest(app_cssDir))
         .pipe(browserSync.stream());
+});
+
+gulp.task('css-min', function() {
+    return gulp.src([app_cssDir + 'styles.css'], {allowEmpty: true})
+		.pipe(cssnano())
+		.pipe(rename('styles.min.css'))
+        .pipe(gulp.dest(app_cssDir));
 });
 
 //копируем JS - Jquery / Fancybox / BxSlider
