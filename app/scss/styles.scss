@@ -5,42 +5,71 @@
 @import '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
 
 /* text colors */
-$body-color: #3f3f3f;
-$second-color: #2699fb;
-$gray-color: #dbdbdb;
+$body-color: #000;
+$second-color: #000; //
 $important-color: #ff0000;
-$link-color: #2699fb;
-$highlight-color: #ffa200;
+$link-color: #007bff;
+$link-color-hover: #0056b3;
+$highlight-color: #cc6699;
 $black-color: #000;
 $white-color: #fff;
+$gray-color: #6c757d;
+$pink-color: #cc6699;
+$blue-color: #3e65af;
+$green-color: #00FF75;
 $decrp-color: #525252;
 $placeholder-color: #dbdbdb;
-$footer-color: #959595;
+$footer-color: #000;
+$border-color: #545454;
+$border-color-2: #474747;
 
 /* bg colors */
-$body-bg: #f6f6f6;
-$second-bg: #dbdbdb;
+$body-bg: #fff;
+$second-bg: #f8f9fa;
 $dark-bg: #707070;
-$footer-bg: #626262;
+$header-bg: #f8f9fa;
+$footer-bg: #e9ecef;
+$shadow-bg: rgba(211, 74, 142, 0.4);
+
+/* borders */
+$border-color: $white-color;
+$border-width: 2px;
+$border-color-link: #5447CA;
+$border-width-link: 3px;
+$border-radius: 10px;
 
 /* links */
 $a-decoration: none;
-$a-decoration-hover: none;
+$a-decoration-hover: underline;
 
 /* H1... */
 $h-font-style: 'Roboto', sans-serif;
 $h-font-weight: 700;
-$h-font-color: #222;
+$h-font-color: $black-color;
 
 /* forms */
-$input_border: #dbdbdb solid 2px;
-$input_bg: transparent;
-$textarea_resize: none;
+$input-border: $border-color solid $border-width;
+$input-border-radius: 3px;
+$input-bg: $white-color;
+$input-padding: 7px 16px;
+$button-padding: 9px 16px;
+$button-border: $border-color solid $border-width;
+$textarea-resize: none;
+$forms-label-color: #a2a2a2;
 
 /* other */
-$p-margin: 0 0 27px;
+$p-margin: 0 0 16px;
 $body-padding-left: 26px;
 $body-padding-right: 26px;
+$default-half-spacing: 8px;
+$default-spacing: 16px;
+$default-spacing-2: 24px;
+$default-double-spacing: 32px;
+$default-double-spacing-2: 48px;
+$opacity-body-text: .64;
+$opacity-body-text-2: .48;
+$font-weight-bold: 600;
+$site-block-box-shadow: 5px 5px 15px rgba(2, 0, 10, 0.5), -5px -5px 25px rgba(117, 108, 191, 0.15);
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -53,14 +82,13 @@ body {
 }
 html,body{height: 100%;min-height: 100%;min-width: 320px;}
 
-* {transition: all 0.3s ease 0s;}
-
 p {margin: $p-margin;}
-p.error {margin: 0 0 5px;color:$important-color;}
+p.error {color:$important-color;}
 
-a {text-decoration: $a-decoration;color: $link-color;}
-a:hover {text-decoration: $a-decoration-hover;}
-a img {border: 0;outline: none;}
+a {text-decoration: $a-decoration;color: $link-color;transition: all 0.3s ease 0s;}
+a:focus {outline: none;}
+a:hover {text-decoration: $a-decoration-hover;color: $link-color-hover;outline: none;}
+a img {border: 0;outline: none;transition: all .3s;}
 a:hover img {opacity: 0.85;outline: none;}
 
 b, strong {font-weight: 700;}
@@ -119,6 +147,7 @@ input[disabled] {
 
 button:focus,
 textarea:focus,
+select:focus,
 input:focus {outline: none;}
 
 label {
@@ -127,7 +156,7 @@ label {
   font-size: 16px;
   line-height: 25px;
   color: $white-color;
-  margin-bottom: 17px;
+  margin-bottom: 16px;
 }
 textarea,
 input {
@@ -140,12 +169,12 @@ input {
   color: $link-color;
 
   padding: 15px;
-  margin-bottom: 17px;
+  margin-bottom: 16px;
   
   width: 100%;
   box-sizing: border-box;
-  border: $input_border;
-  background: $input_bg;
+  border: $input-border;
+  background: $input-bg;
 
   caret-color: $link-color;
   text-align: center;
@@ -153,7 +182,7 @@ input {
 }
 textarea {
   text-align: left;
-  resize: $textarea_resize;
+  resize: $textarea-resize;
 }
 input[type=radio],
 input[type=checkbox] {
@@ -171,7 +200,7 @@ input[type=submit] {
     padding: 20px 0 16px;
     font-size: 14px;
     font-weight: 700;
-    line-height: 17px;
+    line-height: 16px;
     letter-spacing: 0;
     text-transform: uppercase;
 }
@@ -193,6 +222,15 @@ input:-webkit-autofill:active {
     box-shadow:         0 0 0px 10em $white-color inset !important;
     -webkit-text-fill-color: $link-color !important;
 }
+// custom scroll
+// ::-webkit-scrollbar {width: 6px;border-radius: 5px;}/* width */
+// ::-webkit-scrollbar-button {display: none;}/* button */
+// ::-webkit-scrollbar-thumb {background: $white-color;border-radius: 5px}/* Handle */
+// ::-webkit-scrollbar-thumb:hover {background: $second-color;}/* Handle on hover */
+// ::-webkit-scrollbar-track {background: #363636;}/* Track */
+// ::-webkit-scrollbar-track-piece {background: #363636;}/* The track NOT covered by the handle. */
+// ::-webkit-scrollbar-corner {background: #363636;}/* Corner */
+// ::-webkit-resizer {background: $dark-bg;}/* Resizer */
 
 .box-shadow {
   -webkit-box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.1);
@@ -210,7 +248,6 @@ input:-webkit-autofill:active {
     padding: 0;
     box-sizing: border-box;
 }
-
 .content {
     flex: 1 0 auto;
     padding: 52px $body-padding-left 30px;
