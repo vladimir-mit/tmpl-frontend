@@ -53,7 +53,8 @@ gulp.task('css-min', function() {
     return gulp.src([app_cssDir + 'styles.css'], {allowEmpty: true})
 		.pipe(cssnano())
 		.pipe(rename('styles.min.css'))
-        .pipe(gulp.dest(app_cssDir));
+        .pipe(gulp.dest(app_cssDir))
+        .pipe(browserSync.stream());
 });
 
 //копируем JS - Jquery / Fancybox / BxSlider
