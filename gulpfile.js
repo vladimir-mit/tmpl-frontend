@@ -20,6 +20,7 @@ var appDir = 'app/',
 	app_cssDir = appDir + 'css/',
 	app_scssDir = appDir + 'scss/',
 	app_jsDir = appDir + 'js/',
+	app_fontsDir = appDir + 'fonts/',
 	dist_cssDir = distDir + 'css/',
 	dist_jsDir = distDir + 'js/';
 
@@ -32,7 +33,7 @@ gulp.task('server', function() {
 		}
 	});
 	//gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'delComplCssFile', 'concatCss'));
-	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'css-min'));
+	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'cssMin'));
 	gulp.watch(app_tmplDir + '**/*.html', gulp.series('htmlBuild'));
 	gulp.watch(app_jsDir + '*.js').on('change', browserSync.reload);
 });
@@ -49,7 +50,7 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('css-min', function() {
+gulp.task('cssMin', function() {
     return gulp.src([app_cssDir + 'styles.css'], {allowEmpty: true})
 		.pipe(cssnano())
 		.pipe(rename('styles.min.css'))
@@ -73,6 +74,44 @@ gulp.task('copyJQ', function() {
 gulp.task('copyBootstrapJs', function() {
     return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js'])
         .pipe(gulp.dest(app_jsDir));
+});
+
+//копируем SlickJs (carousel)
+gulp.task('copySlickJs', function() {
+    return gulp.src(['node_modules/slick-carousel/slick/slick.min.js'])
+        .pipe(gulp.dest(app_jsDir));
+});
+//копируем SlickJs CSS
+gulp.task('copySlickCSS', function() {
+    return gulp.src(['node_modules/slick-carousel/slick/slick.css'])
+        .pipe(gulp.dest(app_cssDir));
+});
+//копируем SlickJs Fonts
+gulp.task('copySlickFonts', function() {
+    return gulp.src(['node_modules/slick-carousel/slick/fonts/*'])
+        .pipe(gulp.dest(app_fontsDir));
+});
+
+//копируем overlayScrollbarsJs (Jquery)
+gulp.task('copyOSJs', function() {
+    return gulp.src(['node_modules/overlayscrollbars/js/jquery.overlayScrollbars.min.js'])
+        .pipe(gulp.dest(app_jsDir));
+});
+//копируем overlayScrollbarsJs CSS min
+gulp.task('copyOSCss', function() {
+    return gulp.src(['node_modules/overlayscrollbars/css/OverlayScrollbars.min.css'])
+        .pipe(gulp.dest(app_cssDir));
+});
+
+//копируем magnificPopupJs
+gulp.task('copyMPJs', function() {
+    return gulp.src(['node_modules/magnific-popup/dist/jquery.magnific-popup.min.js'])
+        .pipe(gulp.dest(app_jsDir));
+});
+//копируем magnificPopup CSS
+gulp.task('copyMPCss', function() {
+    return gulp.src(['node_modules/magnific-popup/dist/magnific-popup.css'])
+        .pipe(gulp.dest(app_cssDir));
 });
 
 //копируем Bootstrap CSS GRID
