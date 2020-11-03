@@ -1,81 +1,82 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 @import '../../node_modules/bootstrap/scss/bootstrap-reboot.scss';
 @import 'include/custom-bootstrap.scss';
 @import '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
 
 /* text colors */
-$body-color: #000;
-$header-color: #000;
-$footer-color: #000;
-$second-color: #000;
+$body-color: #FFF;
+$header-color: #FFF;
+$footer-color: #FFF;
+$second-color: #13082b;
 $important-color: #ff0000;
-$link-color: #007bff;
-$link-color-hover: #0056b3;
-$highlight-color: #cc6699;
+$link-color: #5b33f4;
+$link-color-hover: #FFF;
+$highlight-color: #C81BA5;
 $black-color: #000;
 $white-color: #fff;
 $gray-color: #6c757d;
-$pink-color: #cc6699;
-$blue-color: #3e65af;
-$green-color: #00FF75;
-$decrp-color: #525252;
-$placeholder-color: #dbdbdb;
-$border-color: #545454;
-$border-color-2: #474747;
+$pink-color: #C81BA5;
+$blue-color: #4727C0;
+$green-color: #05FF00;
+$decrp-color: rgba(255, 255, 255, 0.48);
+$placeholder-color: #8e8899;
+
 
 /* bg colors */
-$body-bg: #fff;
-$second-bg: #f8f9fa;
-$dark-bg: #707070;
-$header-bg: #f8f9fa;
-$footer-bg: #e9ecef;
-$shadow-bg: rgba(211, 74, 142, 0.4);
+$body-bg: #190C3E;
+$second-bg: #FFF;
+$dark-bg: #0C0421;
+$header-bg: transparent;
+$footer-bg: #0C0421;
+$shadow-bg: #C81BA5;
 
 /* borders */
-$border-color: $white-color;
+$border-color: #d9d7dd;
+$border-color-2: #474747;
 $border-width: 2px;
 $border-color-link: #5447CA;
 $border-width-link: 3px;
-$border-radius: 10px;
+$border-radius: 100px;
 
 /* links */
 $a-decoration: none;
-$a-decoration-hover: underline;
+$a-decoration-hover: none;
 
 /* H1... */
-$h-font-style: 'Roboto', sans-serif;
-$h-font-weight: 700;
-$h-font-color: $black-color;
+$h-font-style: 'Kanit', sans-serif;
+$h-font-weight: 300;
+$h-font-color: $white-color;
 
 /* forms */
 $input-border: $border-color solid $border-width;
-$input-border-radius: 3px;
-$input-bg: $white-color;
-$input-padding: 7px 16px;
-$button-padding: 9px 16px;
+$input-border-radius: 100px;
+$input-bg: transparent;
+$input-padding: 11px 24px;
+$button-padding: 11px 24px;
 $button-border: $border-color solid $border-width;
 $textarea-resize: none;
-$forms-label-color: #a2a2a2;
+$forms-label-hint-color: #8E899A;
+$forms-label-color: #13082B;
 
 /* other */
-$p-margin: 0 0 16px;
+$p-margin: 0 0 8px;
 $default-half-spacing: 8px;
 $default-spacing: 16px;
 $default-spacing-2: 24px;
 $default-double-spacing: 32px;
 $default-double-spacing-2: 48px;
-$opacity-body-text: .64;
-$opacity-body-text-2: .48;
-$font-weight-bold: 600;
+$opacity-body-text: .48;
+$opacity-body-text-2: .64;
+$font-weight-bold: 700;
 $site-block-box-shadow: 5px 5px 15px rgba(2, 0, 10, 0.5), -5px -5px 25px rgba(117, 108, 191, 0.15);
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 18px;
   background: $body-bg;
   color: $body-color;
 }

@@ -1,7 +1,7 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap");
 /*!
- * Bootstrap Reboot v4.5.2 (https://getbootstrap.com/)
+ * Bootstrap Reboot v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -156,7 +156,8 @@ caption {
   caption-side: bottom; }
 
 th {
-  text-align: inherit; }
+  text-align: inherit;
+  text-align: -webkit-match-parent; }
 
 label {
   display: inline-block;
@@ -271,7 +272,7 @@ template {
   display: none !important; }
 
 /*!
- * Bootstrap Grid v4.5.2 (https://getbootstrap.com/)
+ * Bootstrap Grid v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -4100,13 +4101,13 @@ html {
 /* forms */
 /* other */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 16px;
-  background: #fff;
-  color: #000; }
+  line-height: 18px;
+  background: #190C3E;
+  color: #FFF; }
 
 html, body {
   height: 100%;
@@ -4114,14 +4115,14 @@ html, body {
   min-width: 320px; }
 
 p {
-  margin: 0 0 16px; }
+  margin: 0 0 8px; }
 
 p.error {
   color: #ff0000; }
 
 a {
   text-decoration: none;
-  color: #007bff;
+  color: #5b33f4;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
@@ -4130,8 +4131,8 @@ a:focus {
   outline: none; }
 
 a:hover {
-  text-decoration: underline;
-  color: #0056b3;
+  text-decoration: none;
+  color: #FFF;
   outline: none; }
 
 a img {
@@ -4153,9 +4154,9 @@ strong {
   display: block; }
 
 h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
-  font-weight: 700;
-  color: #000;
-  font-family: "Roboto", sans-serif; }
+  font-weight: 300;
+  color: #fff;
+  font-family: "Kanit", sans-serif; }
 
 h1, .h1 {
   font-size: 30px;
@@ -4231,8 +4232,8 @@ main {
   padding-right: 16px; }
 
 header {
-  background: #f8f9fa;
-  color: #000;
+  background: transparent;
+  color: #FFF;
   padding: 16px 0; }
 
 /* menu */
@@ -4257,9 +4258,9 @@ nav {
       nav ul li:last-child {
         margin-right: 0; }
       nav ul li a {
-        color: #000; }
-        nav ul li a:hover {
-          color: #007bff; }
+        color: #fff; }
+        nav ul li a:hover, nav ul li a.active {
+          color: rgba(255, 255, 255, 0.48); }
 
 button[type=submit],
 input[type=submit],
@@ -4280,8 +4281,8 @@ select:focus {
 
 label {
   display: block;
-  font-family: "Roboto", sans-serif;
-  color: #a2a2a2;
+  font-family: "Kanit", sans-serif;
+  color: #13082B;
   margin-bottom: 16px; }
 
 textarea,
@@ -4289,17 +4290,17 @@ input,
 select {
   display: inline-block;
   vertical-align: top;
-  font-family: "Roboto", sans-serif;
+  font-family: "Kanit", sans-serif;
   color: #000;
-  padding: 7px 16px;
+  padding: 11px 24px;
   margin-bottom: 16px;
   width: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border: #fff solid 2px;
-  background: #fff;
-  caret-color: #000;
-  border-radius: 3px;
+  border: #d9d7dd solid 2px;
+  background: transparent;
+  caret-color: #13082b;
+  border-radius: 100px;
   text-align: left;
   -webkit-transition: all linear .3s;
   -o-transition: all linear .3s;
@@ -4318,7 +4319,7 @@ input[type="checkbox"] {
 input[type=submit] {
   width: 100%;
   background: #fff;
-  color: #cc6699;
+  color: #C81BA5;
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
   border-radius: 111px;
@@ -4330,17 +4331,17 @@ input[type=submit] {
   text-transform: uppercase; }
 
 input[type=submit]:hover {
-  background: #cc6699;
+  background: #C81BA5;
   color: #000; }
 
 button {
-  font-family: "Roboto", sans-serif;
+  font-family: "Kanit", sans-serif;
   background: transparent;
-  border: #fff solid 2px;
-  border-radius: 3px;
-  font-weight: 600;
+  border: #d9d7dd solid 2px;
+  border-radius: 100px;
+  font-weight: 700;
   color: #fff;
-  padding: 9px 16px;
+  padding: 11px 24px;
   -webkit-transition: all linear .3s;
   -o-transition: all linear .3s;
   transition: all linear .3s;
@@ -4357,15 +4358,15 @@ button + button, .btn + .btn, button + .btn, .btn + button {
 
 /* изменение цвета placeholder */
 input::-webkit-input-placeholder {
-  color: #dbdbdb; }
+  color: #8e8899; }
 
 /* Удаление желтого фона при автозаполнении полей (как правило, форм с логином и паролем) */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0px 10em #0056b3 inset !important;
-  box-shadow: 0 0 0px 10em #0056b3 inset !important;
+  -webkit-box-shadow: 0 0 0px 10em #FFF inset !important;
+  box-shadow: 0 0 0px 10em #FFF inset !important;
   -webkit-text-fill-color: #fff !important; }
 
 .site-form_input {
@@ -4397,13 +4398,13 @@ input:-webkit-autofill:active {
     text-align: center;
     line-height: 24px;
     font-size: 118%;
-    font-weight: 600;
-    border: #fff solid 1px; }
+    font-weight: 700;
+    border: #d9d7dd solid 1px; }
   .site-form_input--checkbox label:hover::before {
     border-color: #fff; }
   .site-form_input--checkbox input[type=checkbox]:checked + label:before {
     content: "\2713";
-    background-color: #00FF75;
+    background-color: #05FF00;
     border-color: transparent; }
   .site-form_input--checkbox input[type=submit] {
     padding-top: 11px;
@@ -4435,12 +4436,12 @@ input:-webkit-autofill:active {
     display: block;
     position: relative;
     padding: 9px 16px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-align: center;
-    border: 2px solid #fff;
-    border-radius: 10px;
+    border: 2px solid #d9d7dd;
+    border-radius: 100px;
     margin-bottom: 8px;
     margin-right: 8px; }
   .site-form_radio_item input[type=radio]:checked + label {
@@ -4451,11 +4452,11 @@ input:-webkit-autofill:active {
 
 .site-form_radio--two .site-form_radio_item:first-child label {
   border-right-width: 1px;
-  border-radius: 10px 0 0 10px; }
+  border-radius: 100px 0 0 100px; }
 
 .site-form_radio--two .site-form_radio_item:last-child label {
   border-left: none;
-  border-radius: 0 10px 10px 0; }
+  border-radius: 0 100px 100px 0; }
 
 /* /radio */
 .site-form-upload-wrap {
@@ -4472,8 +4473,8 @@ footer {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   display: block;
-  background: #e9ecef;
-  color: #000;
+  background: #0C0421;
+  color: #FFF;
   text-align: center;
   padding: 16px; }
 
@@ -4482,20 +4483,20 @@ footer p {
 
 /* common classes */
 .dark-bg {
-  background-color: #707070;
+  background-color: #0C0421;
   color: #fff; }
 
 .dark-bg h1, .dark-bg h2, .dark-bg h3, .dark-bg h4, .dark-bg h5, .dark-bg .h1, .dark-bg .h2, .dark-bg .h3, .dark-bg .h4, .dark-bg .h5 {
   color: #fff; }
 
 .second-bg {
-  background-color: #f8f9fa; }
+  background-color: #FFF; }
 
 .border-gray {
   border: 1px solid #6c757d; }
 
 .highlight {
-  color: #cc6699; }
+  color: #C81BA5; }
 
 ._required {
   color: #ff0000; }

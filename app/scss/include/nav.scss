@@ -17,9 +17,9 @@ nav {
 			&:last-child {margin-right: 0;}
 
 			a {
-				color: $black-color;
+				color: $white-color;
 	
-				&:hover {color: $link-color}
+				&:hover, &.active {color: rgba(255, 255, 255, $opacity-body-text)}
 			}
 		}
 	}
