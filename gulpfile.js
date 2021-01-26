@@ -197,13 +197,13 @@ gulp.task('copyImgsDist', function () {
 
 //копируем all.css
 gulp.task('copyCssDist', function () {
-	return gulp.src(app_cssDir + 'all.css')
+	return gulp.src(app_cssDir + '/**/*')
 		.pipe(gulp.dest(dist_cssDir));
 });
 
 //копируем all.js
 gulp.task('copyJsDist', function () {
-	return gulp.src(app_jsDir + 'all.js')
+	return gulp.src(app_jsDir + '/**/*')
 		.pipe(gulp.dest(dist_jsDir));
 });
 
