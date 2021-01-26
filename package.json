@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/vladimir-mit/tmpl-frontend#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-clean": "^0.4.0",
@@ -32,13 +32,13 @@
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
     "balloon-css": "^0.5.2",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "bxslider": "^4.2.14",
     "gulp-rename": "^2.0.0",
     "jquery": "^3.5.1",
     "magnific-popup": "^1.1.0",
     "normalize.css": "^8.0.1",
-    "overlayscrollbars": "^1.13.0",
+    "overlayscrollbars": "^1.13.1",
     "slick-carousel": "^1.8.1"
   }
 }
