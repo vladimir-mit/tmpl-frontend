@@ -1,0 +1,67 @@
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    @extend button;
+
+    &:hover {
+        @extend button:hover;
+        color: $white-color;
+    }
+}
+.btn.active,
+.btn-white {
+    background: $white-color;
+    border-color: $white-color;
+    color: $black-color;
+}
+.btn-gradient {
+    width: 100%;
+    color: $white-color;
+    border-radius: $input-border-radius;
+    padding: $button-padding;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    transition: all linear .4s;
+}
+.btn-gradient:hover {
+	color: $black-color;
+}
+.btn-upload {
+	position: relative;
+	width: 100%;
+	height: 46px;
+	
+	&:after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 20;
+        width: 100%!important;
+        @extend .btn;
+	}
+	
+	& label,
+	& input,
+	& button {margin-bottom: 0;}
+
+	& input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        margin: 0;
+        padding: 0;
+        display: block;
+        cursor: pointer;
+        width: 100%;
+	}
+}
