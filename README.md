@@ -15,4 +15,5 @@
 - gulp-sourcemaps
 - gulp-clean
 - gulp-rigger
+- gulp-include-source
 - browser-sync

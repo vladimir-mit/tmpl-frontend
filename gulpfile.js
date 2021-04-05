@@ -10,7 +10,8 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	sourcemaps = require('gulp-sourcemaps'),
 	clean = require('gulp-clean'),
-	rigger = require('gulp-rigger');
+	rigger = require('gulp-rigger'),
+	includeSources = require('gulp-include-source');
 
 var browserSync = require('browser-sync').create();
 
@@ -168,6 +169,7 @@ gulp.task('delComplJsFile', function () {
 gulp.task('htmlBuild', function () {
 	return gulp.src(app_tmplDir + '*.html')
 	  .pipe(rigger())
+	  .pipe(includeSources())
 	  .pipe(gulp.dest(appDir))
 	  .pipe(browserSync.stream());
 });
