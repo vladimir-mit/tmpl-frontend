@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <title>Page Title</title>
-//= include/head.html
+{{ fileInclude 'include/head' }}
 </head>
 <body>
 	<div class="page-container index-container">
-		//= include/header.html
+		{{ fileInclude 'include/header' }}
 		<main>
 			<div class="container">
 				<div class="row">
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 		</main>
-		//= include/footer.html
+		{{ fileInclude 'include/footer' }}
 	</div>
 </body>
 </html>

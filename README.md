@@ -14,6 +14,6 @@
 - gulp-watch
 - gulp-sourcemaps
 - gulp-clean
-- gulp-rigger
 - gulp-include-source
+- gulp-handlebars-file-include
 - browser-sync

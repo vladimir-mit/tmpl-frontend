@@ -10,8 +10,8 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	sourcemaps = require('gulp-sourcemaps'),
 	clean = require('gulp-clean'),
-	rigger = require('gulp-rigger'),
-	includeSources = require('gulp-include-source');
+	includeSources = require('gulp-include-source'),
+	gulpHandlebarsFileInclude = require('gulp-handlebars-file-include');
 
 var browserSync = require('browser-sync').create();
 
@@ -168,7 +168,9 @@ gulp.task('delComplJsFile', function () {
 //собираем html
 gulp.task('htmlBuild', function () {
 	return gulp.src(app_tmplDir + '*.html')
-	  .pipe(rigger())
+	  .pipe(gulpHandlebarsFileInclude({}, {
+		rootPath: "app/tmpl/"
+	  }))
 	  .pipe(includeSources())
 	  .pipe(gulp.dest(appDir))
 	  .pipe(browserSync.stream());
