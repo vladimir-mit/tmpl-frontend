@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 @import '../../node_modules/bootstrap/scss/bootstrap-reboot.scss';
 @import 'include/custom-bootstrap.scss';
@@ -44,7 +44,7 @@ $a-decoration: none;
 $a-decoration-hover: none;
 
 /* H1... */
-$h-font-style: 'Kanit', sans-serif;
+$h-font-style: 'Open Sans', sans-serif;
 $h-font-weight: 300;
 $h-font-color: $white-color;
 
@@ -72,7 +72,7 @@ $font-weight-bold: 700;
 $site-block-box-shadow: 5px 5px 15px rgba(2, 0, 10, 0.5), -5px -5px 25px rgba(117, 108, 191, 0.15);
 
 body {
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;

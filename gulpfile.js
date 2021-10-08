@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	cssnano = require('gulp-cssnano'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify'),
-	sass = require('gulp-sass'),
+	sass =  require('gulp-sass')(require('sass')),
 	watch = require('gulp-watch'),
 	sourcemaps = require('gulp-sourcemaps'),
 	clean = require('gulp-clean'),
@@ -45,7 +45,7 @@ gulp.task('server', function() {
 //Compile sass into CSS & auto-inject into browsers, and CSS autoprefixer
 gulp.task('sass', function() {
     return gulp.src([app_scssDir + 'styles.scss'])
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
             browsers: ['last 3 versions'],
             cascade: false
