@@ -15,6 +15,17 @@ var gulp = require('gulp'),
 
 var browserSync = require('browser-sync').create();
 
+// var paths = {
+// 	styles: {
+// 		src: 'src/styles/**/*.less',
+// 		dest: 'assets/styles/'
+// 	},
+// 	scripts: {
+// 		src: 'src/scripts/**/*.js',
+// 		dest: 'assets/scripts/'
+// 	}
+// };
+
 var appDir = 'app/',
 	distDir = 'dist/',
 	app_tmplDir = appDir + 'tmpl/',
