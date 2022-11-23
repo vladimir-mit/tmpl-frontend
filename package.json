@@ -32,7 +32,7 @@
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
     "balloon-css": "^0.5.2",
-    "bootstrap": "^4.6.1",
+    "bootstrap": "^5.2.3",
     "bxslider": "^4.2.14",
     "gulp-handlebars-file-include": "^1.0.0",
     "gulp-include-source": "0.0.5",
