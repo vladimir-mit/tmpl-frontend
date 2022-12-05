@@ -25,4 +25,5 @@ Bootstrap 5.2,
 Balloon-scss 0.5, 
 normalize.css 8.0, 
 overlayScrollbars 1.13, 
-TimeCircles 1.5.3
+TimeCircles 1.5.3, 
+easytimer.js 4.5.4
