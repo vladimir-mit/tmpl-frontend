@@ -1,10 +1,8 @@
 # tmpl-frontend
 
-Заготовка для верстки. Mobile First.
+Шаблон для верстки. Mobile First.
 
-Используется Gulp и SCSS.
-Можно добавить Jquery, bxSlider, Slick-carousel, Magnific-Popup, Fancybox, Bootstrap 4.6, Balloon-scss, normalize.css, overlayScrollbars.
-
+Gulp:
 - gulp-concat
 - gulp-autoprefixer
 - gulp-cssnano
@@ -17,3 +15,14 @@
 - gulp-include-source
 - gulp-handlebars-file-include
 - browser-sync
+
++
+Jquery 3.6, 
+bxSlider 4.2,
+Slick-carousel 1.8,
+Magnific-Popup 1.1,
+Fancybox 3.5, 
+Bootstrap 5.2, 
+Balloon-scss 0.5, 
+normalize.css 8.0, 
+overlayScrollbars 1.13
