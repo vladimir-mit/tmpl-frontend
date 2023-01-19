@@ -57,10 +57,7 @@ gulp.task('server', function() {
 gulp.task('sass', function() {
     return gulp.src([app_scssDir + 'styles.scss'])
         .pipe(sass().on('error', sass.logError))
-		.pipe(autoprefixer({
-            browsers: ['last 3 versions'],
-            cascade: false
-        }))
+		.pipe(autoprefixer())
         .pipe(gulp.dest(app_cssDir))
         .pipe(browserSync.stream());
 });
