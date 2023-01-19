@@ -1,20 +1,36 @@
-//$grid-columns:      12;
+//$grid-columns:      12 !default;
+//$grid-gutter-width: 1.5rem !default;
+//$grid-row-columns:  6 !default;
 $grid-gutter-width: 32px;
+$container-padding-x: 32px; 
 
 $grid-breakpoints: (
     xs: 0,
     sm: 576px,
     md: 768px,
     lg: 992px,
-    xl: 1024px,
-    xxl: 1150px
+    xl: 1200px,
+    xxl: 1400px
+    // xs: 0,
+    // sm: 576px,
+    // md: 768px,
+    // lg: 992px,
+    // xl: 1024px,
+    // xxl: 1150px
+    // old
 );
 
 $container-max-widths: (
-    xs: 320px,
     sm: 540px,
     md: 720px,
     lg: 960px,
-    xl: 1264px,
-    xxl: 1264px
+    xl: 1140px,
+    xxl: 1320px
+    // xs: 320px,
+    // sm: 540px,
+    // md: 720px,
+    // lg: 960px,
+    // xl: 1264px,
+    // xxl: 1264px
+    //old
 );
