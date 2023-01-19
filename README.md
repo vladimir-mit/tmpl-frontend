@@ -1,6 +1,4 @@
 # tmpl-frontend
-
-Шаблон для верстки. Mobile First.
 ├── fancybox@3.5.7<br>
 ├── balloon-css@1.2.0<br>
 ├── bootstrap@5.2.3<br>
