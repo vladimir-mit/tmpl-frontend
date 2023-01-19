@@ -1,29 +1,30 @@
 # tmpl-frontend
 
 Шаблон для верстки. Mobile First.
-
-Gulp:
-- gulp-concat
-- gulp-autoprefixer
-- gulp-cssnano
-- gulp-rename
-- gulp-uglify
-- gulp-sass
-- gulp-watch
-- gulp-sourcemaps
-- gulp-clean
-- gulp-include-source
-- gulp-handlebars-file-include
-- browser-sync
-
-Jquery 3.6, 
-bxSlider 4.2, 
-Slick-carousel 1.8, 
-Magnific-Popup 1.1, 
-Fancybox 3.5, 
-Bootstrap 5.2, 
-Balloon-scss 0.5, 
-normalize.css 8.0, 
-overlayScrollbars 1.13, 
-TimeCircles 1.5.3, 
-easytimer.js 4.5.4
+├── fancybox@3.5.7
+├── balloon-css@1.2.0
+├── bootstrap@5.2.3
+├── browser-sync@2.27.11
+├── bxslider@4.2.14
+├── chokidar@3.5.3
+├── easytimer.js@4.5.4
+├── file-uri-to-path@2.0.0
+├── gulp-autoprefixer@8.0.0
+├── gulp-clean@0.4.0
+├── gulp-concat@2.6.1
+├── gulp-cssnano@2.1.3
+├── gulp-handlebars-file-include@1.0.0
+├── gulp-include-source@0.0.5
+├── gulp-rename@2.0.0
+├── gulp-sass@5.1.0
+├── gulp-sourcemaps@3.0.0
+├── gulp-uglify@3.0.2
+├── gulp-watch@5.0.1
+├── gulp@4.0.2
+├── jquery@3.6.3
+├── magnific-popup@1.1.0
+├── normalize.css@8.0.1
+├── overlayscrollbars@2.0.3
+├── sass@1.57.1
+├── slick-carousel@1.8.1
+└── timecircles@1.5.3
