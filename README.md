@@ -8,9 +8,9 @@
 ├── easytimer.js@4.5.4<br>
 ├── file-uri-to-path@2.0.0<br>
 ├── gulp-autoprefixer@8.0.0<br>
+├── gulp-clean-css@4.3.0<br>
 ├── gulp-clean@0.4.0<br>
 ├── gulp-concat@2.6.1<br>
-├── gulp-cssnano@2.1.3<br>
 ├── gulp-handlebars-file-include@1.0.0<br>
 ├── gulp-include-source@0.0.5<br>
 ├── gulp-rename@2.0.0<br>
