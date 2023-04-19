@@ -169,7 +169,7 @@ gulp.task('htmlBuild', function () {
 });
 
 //default task
-gulp.task('default', gulp.series('sass', 'cssMin', 'htmlBuild', 'server'));
+gulp.task('default', gulp.series('server'));
 
 
 /* Tasks for /dist/ */
