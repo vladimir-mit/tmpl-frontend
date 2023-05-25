@@ -99,6 +99,15 @@ gulp.task('copyBootstrapJs', function() {
         .pipe(gulp.dest(app_jsDir));
 });
 
+//copy pagePiling.js
+gulp.task('copyPagePilingCss', function() {
+    return gulp.src(['node_modules/pagepiling.js/dist/*.css']).pipe(gulp.dest(app_cssDir));
+});
+gulp.task('copyPagePilingJs', function() {
+    return gulp.src(['node_modules/pagepiling.js/dist/*.js']).pipe(gulp.dest(app_jsDir));
+});
+gulp.task('copyPagePiling', gulp.series('copyPagePilingCss', 'copyPagePilingJs'));
+
 //copy Slick-carousel
 gulp.task('copySlickJsCss', function() {
     return gulp.src([
