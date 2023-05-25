@@ -23,6 +23,7 @@
 ├── jquery@3.7.0<br>
 ├── magnific-popup@1.1.0<br>
 ├── overlayscrollbars@2.1.1<br>
+├── pagepiling.js@1.5.6<br>
 ├── sass@1.62.1<br>
 ├── slick-carousel@1.8.1<br>
 └── timecircles@1.5.3
