@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	autoprefixer = require('gulp-autoprefixer'),
+	cssnano = require('gulp-cssnano'),
 	cleanCSS = require('gulp-clean-css'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify'),
@@ -35,6 +36,7 @@ var appDir = 'app/',
 	app_slickDir = appDir + 'js/slick-carousel/',
 	app_magnificPopUpDir = appDir + 'js/magnific-popup/',
 	app_overlayScrollbarDir = appDir + 'js/overlayscrollbars/',
+	app_fontsDir = appDir + 'font/',
 	dist_cssDir = distDir + 'css/',
 	dist_jsDir = distDir + 'js/';
 
@@ -45,7 +47,7 @@ gulp.task('server', function() {
 			baseDir: 'app'
 		}
 	});
-	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'cssMin'));
+	gulp.watch(app_scssDir + '**/*.scss', gulp.series('sass', 'cssNano'));
 	gulp.watch(app_tmplDir + '**/*.html', gulp.series('htmlBuild'));
 	gulp.watch(app_jsDir + '*.js').on('change', browserSync.reload);
 });
@@ -59,15 +61,25 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('cssMin', function() {
+gulp.task('cssNano', function() {
     return gulp.src([app_cssDir + 'styles.css'], {allowEmpty: true})
-		.pipe(cleanCSS())
+		.pipe(cssnano())
 		.pipe(rename({
             suffix: '.min'
         }))
         .pipe(gulp.dest(app_cssDir))
         .pipe(browserSync.stream());
 });
+
+// gulp.task('cssMin', function() {
+//     return gulp.src([app_cssDir + 'styles.css'], {allowEmpty: true})
+// 		.pipe(cleanCSS())
+// 		.pipe(rename({
+//             suffix: '.min'
+//         }))
+//         .pipe(gulp.dest(app_cssDir))
+//         .pipe(browserSync.stream());
+// });
 
 //copy JS - Jquery / Fancybox / BxSlider
 gulp.task('copyJs', function() {

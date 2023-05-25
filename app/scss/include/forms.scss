@@ -77,7 +77,7 @@ input[type=submit]:hover {
 
 button {
   font-family: $h-font-style;
-  background: transparent;
+  background: $input-bg;
   border: $button-border;
   border-radius: $input-border-radius;
   color: $white-color;
