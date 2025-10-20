@@ -20,7 +20,7 @@
     "@fancyapps/fancybox": "^3.5.7",
     "balloon-css": "^1.2.0",
     "bootstrap": "^5.2.3",
-    "browser-sync": "^2.29.3",
+    "browser-sync": "^3.0.4",
     "bxslider": "^4.2.14",
     "chokidar": "^3.5.3",
     "easytimer.js": "^4.5.4",
