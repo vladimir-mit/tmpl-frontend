@@ -2,7 +2,7 @@
 
 var gulp = require('gulp'),
 	concat = require('gulp-concat'),
-	autoprefixer = require('gulp-autoprefixer'),
+	autoprefixer = require('gulp-autoprefixer').default,
 	cssnano = require('gulp-cssnano'),
 	cleanCSS = require('gulp-clean-css'),
 	rename = require('gulp-rename'),
